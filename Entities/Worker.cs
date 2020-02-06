@@ -7,12 +7,21 @@ namespace Composition.Entities
     class Worker
     {
         public String Name { get; set; }
-        public WorkerLevel workerLevel { get; set; }
+        public WorkerLevel WorkerLevel { get; set; }
         public double BaseSalary { get; set; }
+        public Department Department { get; set; }
         public List<HourContract> Contracts { get; set; } = new List<HourContract>();
 
         public Worker()
         {
+        }
+
+        public Worker(string name, WorkerLevel workerLevel, double baseSalary, Department department)
+        {
+            Name = name;
+            WorkerLevel = workerLevel;
+            BaseSalary = baseSalary;
+            Department = department;
         }
 
         public void AddContract (HourContract contract)
